@@ -1,7 +1,8 @@
+<% javascript_include_tag 'training' %>
 <% @training_data.each do |td| %>
-  <p><%= p td %></p>
+  <p class="training_data"><%= p td %></p>
   <p>Which label corresponds to the information above?</p>
   <% @training_labels.each do |tl| %>
-    <a href="test" class="btn"><%= "#{tl}"%></a>
+    <a href="test" class="training_label_button"><%= "#{tl}"%></a>
   <% end %>
 <% end %>

@@ -1,0 +1,31 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  color: $font-color-base;
+  font-family: $font-family-base;
+  font-size: $font-base-size;
+  font-weight: $font-weight-normal;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: $font-weight-light;
+  margin: 12px 0 24px 0;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+}
+
+p {
+  font-weight: $font-weight-light;
+}
+
+a {
+  color: $font-color-base;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
