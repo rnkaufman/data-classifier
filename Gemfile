@@ -1,3 +1,7 @@
 gem 'sinatra'
 gem 'sinatra-flash'
 gem 'sinatra-validation'
+gem 'sprockets'
+gem 'yui-compressor'
+gem 'coffee-script'
+gem 'sass'
