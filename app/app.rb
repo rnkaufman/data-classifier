@@ -9,13 +9,15 @@ require 'execjs'
 class DataClassifier < Sinatra::Base
   set :environment, Sprockets::Environment.new
 
-  # append assets paths
-  environment.append_path "assets/stylesheets"
-  environment.append_path "assets/javascripts"
+  configure do
+    # append assets paths
+    environment.append_path "assets/stylesheets"
+    environment.append_path "assets/javascripts"
 
-  # compress assets
-  environment.js_compressor  = :uglify
-  environment.css_compressor = :scss
+    # compress assets
+    environment.js_compressor  = :uglify
+    environment.css_compressor = :scss
+  end
 
   get "/assets/*" do
     env["PATH_INFO"].sub!("/assets", "")
