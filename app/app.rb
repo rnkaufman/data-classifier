@@ -1,7 +1,5 @@
-require 'sinatra'
 require 'sinatra/base'
 require 'sprockets'
-require 'uglifier'
 require 'sass'
 require 'coffee-script'
 require 'execjs'
@@ -10,13 +8,9 @@ class DataClassifier < Sinatra::Base
   set :environment, Sprockets::Environment.new
   set :root, File.dirname(__FILE__)
 
-  configure do
-    environment.append_path "assets/stylesheets"
-    environment.append_path "assets/javascripts"
-    environment.append_path "views/homepage.erb"
-    environment.js_compressor  = :uglify
-    environment.css_compressor = :scss
-  end
+  environment.append_path "assets/stylesheets"
+  environment.append_path "assets/javascripts"
+  environment.css_compressor = :scss
 
   get '/' do
     erb :homepage
