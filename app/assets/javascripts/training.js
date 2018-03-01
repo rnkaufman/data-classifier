@@ -1,1 +1,1 @@
-debugger;
+console.log("test");
