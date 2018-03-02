@@ -1,5 +1,5 @@
 <p class="training_data"><%= p @training_data[0] %></p>
 <p>Which label corresponds to the information above?</p>
-<% @training_labels.each do |tl| %>
-<button type id="training_label_button"><%="#{tl}"%></button>
+<% @training_labels.each.with_index do |tl, index| %>
+  <button type id="training_label_button"><%="#{index+1} #{tl}"%></button>
 <% end %>
