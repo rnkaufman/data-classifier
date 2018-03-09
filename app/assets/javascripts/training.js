@@ -6,11 +6,6 @@ document.onkeydown = function(e) {
   }
 };
 
-function switchLabels() {
-  var data = document.getElementById('training_data').innerHTML;
-  var chosen_labels = JSON.parse(localStorage.getItem('labels'));
-}
-
 function fetchData() {
   var display_data = JSON.parse(localStorage.getItem('datum'));
   var training_data = document.getElementById('display_data');
