@@ -3,7 +3,6 @@ window.onload=function(){
 }
 
 function saveData(e) {
-  var labels = document.getElementById('training_labels').value;
   var data = document.getElementById('training_data').value;
 
   if (localStorage.getItem('datum') == null) {

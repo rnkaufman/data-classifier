@@ -7,9 +7,9 @@ document.onkeydown = function(e) {
 };
 
 function fetchData() {
-  var display_data = JSON.parse(localStorage.getItem('datum'));
+  var display_data = JSON.parse(localStorage.getItem('datum'))[0];
   var training_data = document.getElementById('display_data');
 
   training_data.innerHTML='';
-  training_data.innerHTML = '<p>' + display_data + '</p>';
+  training_data.innerHTML = '<p>' + display_data[0] + '</p>';
 }
