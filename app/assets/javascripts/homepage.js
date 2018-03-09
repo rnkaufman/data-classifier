@@ -3,12 +3,12 @@ window.onload=function(){
 }
 
 function saveData(e) {
-  var labels = JSON.parse(document.getElementById('training_labels').value);
-  var data = JSON.parse(document.getElementById('training_data').value);
+  var labels = document.getElementById('training_labels').value;
+  var data = document.getElementById('training_data').value;
 
   if (localStorage.getItem('datum') == null) {
     var datum = [];
     datum.push(data)
-    localStorage.setItem('datum', JSON.stringify(datum));
+    localStorage.setItem('datum', datum);
   }
 }
