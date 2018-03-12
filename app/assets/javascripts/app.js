@@ -1,2 +1,2 @@
-//= require training
 //= require homepage
+//= require training
