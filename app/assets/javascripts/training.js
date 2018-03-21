@@ -1,7 +1,7 @@
-var pressedKey, chosenLabel;
+var pressedKey, chosenLabel, previous_results;
 var result = [];
 var position = JSON.parse(localStorage.getItem('results'));
-var display_data = JSON.parse(localStorage.getItem('datum'))[0];
+var display_data = JSON.parse(localStorage.getItem('datum'));
 var labels = JSON.parse(localStorage.getItem('labels'));
 
 document.onkeydown = function(e) {
@@ -11,20 +11,24 @@ document.onkeydown = function(e) {
   }
 
   if (position == null) {
-    var results = []
     result_json = {}
+    position = 0
   } else {
-    var results = JSON.parse(localStorage.getItem('results'));
-    display_data = display_data[position-1];
+    previous_results = JSON.parse(localStorage.getItem('results'));
+    position = Object.keys(results).length;
   }
-  result.push([chosenLabel])
-  results.push(result);
+
+  var results = JSON.parse('{"' + display_data[position] + '":' + '"' + chosenLabel + '"}')
   localStorage.setItem('results', JSON.stringify(results));
 
-  // result = [{"label1" => {"data1", "data2"}}, {"label2" => {"data3", "data4"}}]
-
-  localStorage.setItem('results', result);
+  updateData(display_data[position+1]);
 };
+
+function updateData(display_data) {
+  var training_data = document.getElementById('display_data');
+  training_data.innerHTML='';
+  training_data.innerHTML = '<p>' + display_data + '</p>';
+}
 
 function fetchData() {
   var display_data = JSON.parse(localStorage.getItem('datum'))[0];

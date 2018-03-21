@@ -1,5 +1,6 @@
 window.onload=function(){
   document.getElementById('initial_data').addEventListener('submit', saveData);
+  localStorage.clear();
 }
 
 function saveData(e) {
