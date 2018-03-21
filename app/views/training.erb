@@ -1,7 +1,8 @@
-<% @training_data.each do |td| %>
-  <p class="training_data"><%= p td %></p>
-  <p>Which label corresponds to the information above?</p>
-  <% @training_labels.each do |tl| %>
-    <a href="test" class="training_label_button"><%= "#{tl}"%></a>
-  <% end %>
+<%= javascript_include_tag '/assets/training.js' %>
+<body onload="fetchAndUpdateData()">
+  <div id="display_data"></div>
+</body>
+<p>Which label corresponds to the information above?</p>
+<% @training_labels.each.with_index do |tl, index| %>
+  <button type id="training_label_button"><%="#{index+1}: #{tl}"%></button>
 <% end %>

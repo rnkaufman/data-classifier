@@ -1,1 +1,1 @@
-//= require training
+//= require homepage

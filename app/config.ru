@@ -3,6 +3,7 @@ Bundler.setup :default
 require './app'
 require 'sprockets'
 require 'sinatra/base'
+require 'pry'
 
 map '/assets' do
   environment = Sprockets::Environment.new

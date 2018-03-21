@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+div.main {
+  margin-top: 10px;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #efefef;
@@ -6,7 +10,41 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 200px;
+  text-align: center;
   height: 100px;
   margin: auto;
+}
+
+p.title {
+  font-size: larger;
+}
+
+div#training_data {
+  font-size: larger;
+}
+
+textarea.input {
+  background-color: white;
+  min-height: 150px;
+  width: 250px;
+}
+
+input[type=submit] {
+  background: #f47e42;
+  padding: 10px 25px;
+  font-size: 16px;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button {
+  background: #f47e42;
+  padding: 10px 25px;
+  font-size: 16px;
+  color: white;
+  border-radius: 2px;
+  display: inline-block;
+  cursor: pointer;
+  margin-right:5px;
 }
