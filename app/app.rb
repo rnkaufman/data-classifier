@@ -3,10 +3,12 @@ require 'sprockets'
 require 'sass'
 require 'coffee-script'
 require 'execjs'
+require 'sinatra/nice_easy_helpers'
 
 class DataClassifier < Sinatra::Base
   set :environment, Sprockets::Environment.new
   set :root, File.dirname(__FILE__)
+  helpers Sinatra::NiceEasyHelpers
 
   environment.append_path "assets/stylesheets"
   environment.append_path "assets/javascripts"
