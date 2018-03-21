@@ -1,5 +1,5 @@
 var pressedKey, chosenLabel;
-var results;
+var results = {};
 var position = JSON.parse(localStorage.getItem('results'));
 var display_data = JSON.parse(localStorage.getItem('datum'));
 var labels = JSON.parse(localStorage.getItem('labels'));
@@ -10,13 +10,12 @@ document.onkeydown = function(e) {
     chosenLabel = labels[pressedKey-1];
     if (position == null) {
       position = 0
-      results = JSON.parse('{"' + display_data[position] + '":' + '"' + chosenLabel + '"}')
     } else {
       results = JSON.parse(localStorage.getItem('results'));
       position = Object.keys(results).length;
-      results[`${display_data[position]}`] = chosenLabel;
     }
 
+    results[`${display_data[position]}`] = chosenLabel;
     localStorage.setItem('results', JSON.stringify(results));
     updateData(display_data[position+1]);
   }
