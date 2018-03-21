@@ -11,7 +11,6 @@ document.onkeydown = function(e) {
   }
 
   if (position == null) {
-    result_json = {}
     position = 0
   } else {
     previous_results = JSON.parse(localStorage.getItem('results'));
