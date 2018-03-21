@@ -15,7 +15,7 @@ document.onkeydown = function(e) {
     position = 0
   } else {
     previous_results = JSON.parse(localStorage.getItem('results'));
-    position = Object.keys(results).length;
+    position = Object.keys(previous_results).length;
   }
 
   var results = JSON.parse('{"' + display_data[position] + '":' + '"' + chosenLabel + '"}')
@@ -24,16 +24,13 @@ document.onkeydown = function(e) {
   updateData(display_data[position+1]);
 };
 
-function updateData(display_data) {
-  var training_data = document.getElementById('display_data');
-  training_data.innerHTML='';
-  training_data.innerHTML = '<p>' + display_data + '</p>';
+function fetchAndUpdateData() {
+  var display_data = JSON.parse(localStorage.getItem('datum'))[0];
+  updateData(display_data);
 }
 
-function fetchData() {
-  var display_data = JSON.parse(localStorage.getItem('datum'))[0];
+function updateData(display_data) {
   var training_data = document.getElementById('display_data');
-
   training_data.innerHTML='';
   training_data.innerHTML = '<p>' + display_data + '</p>';
 }
