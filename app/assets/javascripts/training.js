@@ -17,7 +17,13 @@ document.onkeydown = function(e) {
 
     results[`${display_data[position]}`] = chosenLabel;
     localStorage.setItem('results', JSON.stringify(results));
-    updateData(display_data[position+1]);
+    next_data = display_data[position+1];
+
+    if (next_data != undefined) {
+      updateData(next_data);
+    } else {
+      showResults(results);
+    }
   }
 };
 
@@ -30,4 +36,11 @@ function updateData(display_data) {
   var training_data = document.getElementById('display_data');
   training_data.innerHTML='';
   training_data.innerHTML = '<p>' + display_data + '</p>';
+}
+
+function showResults(results) {
+  var page_results = document.getElementById('training_page');
+  page_results.innerHTML='';
+  page_results.innerHTML = '<p class="title">Training Results:</p>';
+  page_results.innerHTML += '<p>' + JSON.stringify(results) + '</p>';
 }
