@@ -1,8 +1,10 @@
-<%= javascript_include_tag '/assets/training.js' %>
-<body onload="fetchAndUpdateData()">
-  <div id="display_data"></div>
-</body>
-<p>Which label corresponds to the information above?</p>
-<% @training_labels.each.with_index do |tl, index| %>
-  <button type id="training_label_button"><%="#{index+1}: #{tl}"%></button>
-<% end %>
+<div id="training_page">
+  <%= javascript_include_tag '/assets/training.js' %>
+  <body onload="fetchAndUpdateData()">
+    <div id="display_data"></div>
+  </body>
+  <p>Which label corresponds to the information above?</p>
+  <% @training_labels.each.with_index do |tl, index| %>
+    <button type id="training_label_button"><%="#{index+1}: #{tl}"%></button>
+  <% end %>
+</div>
