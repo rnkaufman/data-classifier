@@ -22,7 +22,8 @@ document.onkeydown = function(e) {
     if (next_data != undefined) {
       updateData(next_data);
     } else {
-      showResults(results);
+      formatted_results = formatResults(results);
+      showResults(formatted_results);
     }
   }
 };
@@ -43,4 +44,16 @@ function showResults(results) {
   page_results.innerHTML='';
   page_results.innerHTML = '<p class="title">Training Results:</p>';
   page_results.innerHTML += '<p>' + JSON.stringify(results) + '</p>';
+}
+
+function formatResults(results) {
+  var formatted_results = {};
+  for(var key in results){
+    if (formatted_results[results[key]] != undefined) {
+      formatted_results[results[key]].push(key);
+    } else {
+      formatted_results[results[key]] = [key];
+    }
+  }
+  return formatted_results;
 }
