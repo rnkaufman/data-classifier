@@ -1,7 +1,7 @@
 gem 'coffee-script'
+gem 'nice-n-easy'
 gem 'pg'
 gem 'sass'
 gem 'sinatra'
 gem 'sprockets'
 gem 'yui-compressor'
-gem 'nice-n-easy'
