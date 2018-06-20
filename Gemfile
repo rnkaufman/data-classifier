@@ -1,3 +1,5 @@
+source 'https://rubygems.org'
+gem 'carrierwave', '0.11.0'
 gem 'coffee-script'
 gem 'nice-n-easy'
 gem 'pg'
